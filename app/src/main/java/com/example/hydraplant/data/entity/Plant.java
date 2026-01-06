@@ -7,21 +7,50 @@ import androidx.room.PrimaryKey;
 public class Plant {
 
     @PrimaryKey(autoGenerate = true)
-    public int id;
+    private int id;
 
-    public int level;
-    public int currentHp;
-    public int maxHp;
-    public int currentXp;
-    public int targetXp;
-    public boolean isAlive;
+    private int level;
+    private int hp;
+    private int xp;
 
-    public Plant() {
-        this.level = 1;
-        this.currentHp = 100;
-        this.maxHp = 100;
-        this.currentXp = 0;
-        this.targetXp = 100;
-        this.isAlive = true;
+    // --- Constructor (Kurucu) ---
+    public Plant(int level, int hp, int xp) {
+        this.level = level;
+        this.hp = hp;
+        this.xp = xp;
+    }
+
+    // --- Getter ve Setter Metotları (Eksik Olanlar Bunlardı) ---
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
     }
 }

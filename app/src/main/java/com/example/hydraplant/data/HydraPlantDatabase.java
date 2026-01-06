@@ -26,7 +26,6 @@ public abstract class HydraPlantDatabase extends RoomDatabase{
         if (INSTANCE == null) {
             synchronized (HydraPlantDatabase.class) {
                 if (INSTANCE == null) {
-                    // TODO 3: Veritabanı ismini "hydra_plant_database" olarak belirle
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                                     HydraPlantDatabase.class, "hydra_plant_database")
                             .addCallback(sRoomDatabaseCallback)
@@ -47,8 +46,8 @@ public abstract class HydraPlantDatabase extends RoomDatabase{
                 // Veritabanı örneğini al
                 PlantDao dao = INSTANCE.plantDao();
 
-                // Yeni bir bitki oluştur (Varsayılan: Lvl 1, HP 100)
-                Plant initialPlant = new Plant();
+                // Level 1, Can 100, XP 0 olarak başlatıyoruz
+                Plant initialPlant = new Plant(1, 100, 0);
 
                 // Veritabanına kaydet
                 dao.insertPlant(initialPlant);
